@@ -1,0 +1,25 @@
+/** Inicio de estilo en CSS **/
+
+/** Body **/
+
+.contenedorBody {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-template-areas: "header" "main" "footer";
+
+    .header{
+    grid-area: header;
+    }
+
+    .main{
+        grid-area: main;
+    }
+    
+    .footer{
+        grid-area: footer;
+    }
+}
+
+
+

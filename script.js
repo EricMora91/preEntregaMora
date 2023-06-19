@@ -1,150 +1,189 @@
-let inicio = prompt(`¿Quién anda ahí? ¿Eres un MAGO o BRUJA?`).toUpperCase()
+let inicio = prompt(`¿Quién anda ahí? ¿Eres un mago o bruja?`).toUpperCase();
 
-if(inicio ==`MAGO` || inicio == `BRUJA`){
-    alert(`Bienvenido al Callejón de la Bruja Tuerta`)
+(inicio ==`MAGO` || inicio == `BRUJA`)? (alert(`Bienvenido al Callejón de la Bruja Tuerta`), console.log(`Eres Mago o Bruja`)) : (alert(`¡No se permiten Muggles!`), console.log(`Eres Muggle, acceso denegado`),location.reload());
 
-        console.log(`Eres Mago o Bruja`)
-        let edad = Number(prompt(`Ingrese su edad`))
-
-        while(isNaN(edad)){
-            alert(`Por favor ingrese un número`)
-            edad = Number(prompt(`Ingrese su edad`))
+    if( inicio == `MAGO` || inicio == `BRUJA`){
+        let edad =  Number(prompt(`Ingresa tu edad`))
+        
+        while( isNaN(edad)){
+            alert(`Por favor ingrese solo números`)
+            edad = Number(prompt(`Ingresa tu edad`))
         }
 
-        if(edad >= 18){
-            alert(`Adelante, estás en el Callejón de la Bruja Tuerta, la tienda oficial online de útiles para todo estudiante de Hogwarts.`)
-            console.log(`Eres mayor de edad`)
+            if(edad >= 18){
+                alert(`Adelante, estás en el Callejón de la Bruja Tuerta, la tienda oficial online de útiles para todo estudiante de Hogwarts.`)
+                console.log(`Eres mayor de edad`)
 
-            let name = prompt(`Por favor ingrese su nombre para validar su carta de Hogwarts`).toUpperCase()
-            let apellido = prompt(`Por favor ingrese su apellido para validar carta de Hogwarts`).toUpperCase()
+                let name = prompt(`Por favor ingrese su nombre para validar su carta de Hogwarts`).toUpperCase()
+                let apellido = prompt(`Por favor ingrese su apellido para validar carta de Hogwarts`).toUpperCase()
 
-            if( inicio == `MAGO` && edad >= 18){
-                function saludo (name, apellido){
-                    alert(`COLEGIO HOGWARTS DE MAGIA Y HECHICERÍA
-                    \nDirector: Albus Percival Wulfric Brian Dumbledore.
-                    
-                    \nEstimado Señor ${name} ${apellido}
-                    
-                    \nTenemos el placer de informarle de que dispone de una plaza en el Colegio Hogwarts de Magia y Hechicería. Por favor, observe la lista del equipo y los libros necesarios. Las clases comienzan el 1 de septiembre. Esperamos su lechuza antes del 31 de julio.
-                    
-                    \nMuy cordialmente,
-                    \nMinerva McGonagall
-                    \nSubdirectora.`)
-                    console.log(`Bienvenido a Hogwarts ${name} ${apellido}`)
-                }
-                saludo(name, apellido)
-            } else{
-                function saludo (name, apellido){
-                    alert(`COLEGIO HOGWARTS DE MAGIA Y HECHICERÍA
-                    \nDirector: Albus Percival Wulfric Brian Dumbledore.
-                    
-                    \nEstimada Señorita ${name} ${apellido}
-                    
-                    \nTenemos el placer de informarle de que dispone de una plaza en el Colegio Hogwarts de Magia y Hechicería. Por favor, observe la lista del equipo y los libros necesarios. Las clases comienzan el 1 de septiembre. Esperamos su lechuza antes del 31 de julio.
-                    
-                    \nMuy cordialmente,
-                    \nMinerva McGonagall
-                    \nSubdirectora.`)
-                    console.log(`Bienvenida a Hogwarts ${name} ${apellido}`)
-                }
-                saludo(name, apellido)
-            }
-
-            class Casas{
-                constructor(id, nombre, valores, colores, escudo){
-                    this.id = id
-                    this.nombre = nombre
-                    this.valores = valores
-                    this.colores = colores
-                    this.escudo = escudo
-                }
-
-                mostrarCasa(){
-                    console.log(`Eres ${this.nombre}`)
-                }
-            }
-
-            const casasG = new Casas(1,`Gryffindor`,`Valor, Fuerza, Audacia`,`Rojo y Dorado`,`León`);
-            const casasR = new Casas(2, `Ravenclaw`,`Creatividad, Erudición, Inteligencia`, `Azul y Bronce`,`Águila`);
-            const casasS = new Casas(3, `Slytherin`,`Ambición, Determinación, Astucia`,`Verde y Plateado`,`Serpiente`)
-            const casasH = new Casas(4, `Hufflepuff`,`Justicia, Lealtad, Paciencia`,`Amarillo y Negro`,`Tejón`);
-
-            const houses = [casasG, casasR, casasS, casasH]
-
-            console.log(houses)
-
-
-            let casa = Number(prompt(`A continuación elige a cuál casa perteneces en Hogwarts,
-            \nElige 1 si es ${casasG.nombre}
-            \nElige 2 si es ${casasR.nombre}
-            \nElige 3 si es ${casasS.nombre}
-            \nElige 4 si es ${casasH.nombre}
-            \nElige 0 para salir.`))
-
-            const casaFinal = []
-
-            while(casa != 0){
-                switch(casa){
-                    case 1:
-                        alert(`Eres ${casasG.nombre}`)
-                        casasG.mostrarCasa()
-                        casaFinal.push(`${houses[0].nombre}`)
-                        break;
-
-                    case 2:
-                        alert(`Eres ${casasR.nombre}`)
-                        casasR.mostrarCasa()
-                        casaFinal.push(`${houses[1].nombre}`)
-                        break;
-
-                    case 3:
-                        alert(`Eres ${casasS.nombre}`)
-                        casasS.mostrarCasa()
-                        casaFinal.push(`${houses[2].nombre}`)
-                        break;
-
-                    case 4:
-                        alert(`Eres ${casasH.nombre}`)
-                        casasH.mostrarCasa()
-                        casaFinal.push(`${houses[3].nombre}`)
-                        break;
-
-                    default:
-                        alert(`Dato inexistente, prueba otra vez`)
-                        console.log(`Dato inexistente`)
-                        break;
-                }
-                if(casa == 1 || casa == 2 || casa == 3 || casa == 4){
-                    break
+                if( inicio == `MAGO` && edad >= 18){
+                    function saludo (name, apellido){
+                        alert(`COLEGIO HOGWARTS DE MAGIA Y HECHICERÍA
+                        \nDirector: Albus Percival Wulfric Brian Dumbledore.
+                        
+                        \nEstimado Señor ${name} ${apellido}
+                        
+                        \nTenemos el placer de informarle de que dispone de una plaza en el Colegio Hogwarts de Magia y Hechicería. Por favor, observe la lista del equipo y los libros necesarios. Las clases comienzan el 1 de septiembre. Esperamos su lechuza antes del 31 de julio.
+                        
+                        \nMuy cordialmente,
+                        \nMinerva McGonagall
+                        \nSubdirectora.`)
+                        console.log(`Bienvenido a Hogwarts ${name} ${apellido}`)
+                    }
+                    saludo(name, apellido)
                 } else{
-                    casa = Number(prompt(`A continuación elige a cuál casa perteneces en Hogwarts,
-                    \nElige 1 si es ${casasG.nombre}
-                    \nElige 2 si es ${casasR.nombre}
-                    \nElige 3 si es ${casasS.nombre}
-                    \nElige 4 si es ${casasH.nombre}
-                    \nElige 0 para salir.`))
-                }
-            }   
-
-                for(let i = 1; i<5; i++){
-                    if(i == 1){
-                        iNueva = `${casasG.nombre}`
-                    } else if(i == 2){
-                        iNueva = `${casasR.nombre}`
+                    function saludo (name, apellido){
+                        alert(`COLEGIO HOGWARTS DE MAGIA Y HECHICERÍA
+                        \nDirector: Albus Percival Wulfric Brian Dumbledore.
+                        
+                        \nEstimada Señorita ${name} ${apellido}
+                        
+                        \nTenemos el placer de informarle de que dispone de una plaza en el Colegio Hogwarts de Magia y Hechicería. Por favor, observe la lista del equipo y los libros necesarios. Las clases comienzan el 1 de septiembre. Esperamos su lechuza antes del 31 de julio.
+                        
+                        \nMuy cordialmente,
+                        \nMinerva McGonagall
+                        \nSubdirectora.`)
+                        console.log(`Bienvenida a Hogwarts ${name} ${apellido}`)
                     }
-                    else if(i == 3){
-                        iNueva = `${casasS.nombre}`
-                    } else{
-                        iNueva = `${casasH.nombre}`
-                    }
-                    alert(`Si elegiste ${i} entonces eres ${iNueva}`)
+                    saludo(name, apellido)
                 }
 
-                function perfil (name, apellido, edad){
-                    alert(`Te llamas ${name} ${apellido} y tienes ${edad} años y estás en la casa de ${casaFinal}`)
+                alert(`Le recomendamos informarse con el Sombrero Seleccionador acerca de las 4 Casas de Hogwarts, antes de elegir a cuál casa pertenecer.`)
+
+                let boton1 = document.getElementById("boton1")
+                boton1.onclick = () => {
+                    alert(`Hola ${name}, soy el Sombrero Seleccionador y estoy aquí para orientarte a cuál Casa pertenecer dentro de Hogwarts. Todas son buenas, pero cada casa valora diferentes cosas. 
+            
+                    \nPuedes pertenecer a Gryffindor, donde habitan los valientes. 
+                
+                    \nPuedes pertenecer a Hufflepuff donde son justos y leales. 
+                
+                    \nO tal vez a la antigua sabiduría de Ravenclaw, si tienes una mente dispuesta. 
+                
+                    \nO tal vez en Slytherin, esa gente astuta utiliza cualquier medio para lograr sus fines.
+                
+                    \nTe recomiendo visitar la Sala Común de cada Casa para ver más información y luego vuelvas conmigo para elegir a cuál casa quieres pertenecer.
+                    \n¡Buena suerte ${name}!`)
+                    console.log(`Has consultado al Sombrero Seleccionador`)
+                }
+                class Casas{
+                    constructor(id, nombre, valores, colores, escudo){
+                        this.id = id
+                        this.nombre = nombre
+                        this.valores = valores
+                        this.colores = colores
+                        this.escudo = escudo
                     }
-    
+
+                    mostrarCasa(){
+                        console.log(`Ahora perteneces a ${this.nombre}`)
+                    }
+                }
+
+                const casasG = new Casas(1,`Gryffindor`,`Valor, Fuerza, Audacia`,`Rojo y Dorado`,`León`);
+                const casasR = new Casas(2, `Ravenclaw`,`Creatividad, Erudición, Inteligencia`, `Azul y Bronce`,`Águila`);
+                const casasS = new Casas(3, `Slytherin`,`Ambición, Determinación, Astucia`,`Verde y Plateado`,`Serpiente`)
+                const casasH = new Casas(4, `Hufflepuff`,`Justicia, Lealtad, Paciencia`,`Amarillo y Negro`,`Tejón`);
+
+                const houses = [casasG, casasR, casasS, casasH]
+
+                console.log(houses)
+
+                let boton2 = document.getElementById("boton2")
+                boton2.onclick = () =>{
+                    alert(`Hola ${name}, en la Casa de ${houses[0].nombre}, nosotros valoramos más que nada: ${houses[0].valores}, nuestros colores son el ${houses[0].colores} y nuestro escudo es un ${houses[0].escudo}.`)
+                    console.log(`Has visitado la Sala Común de Gryffindor`)
+                }
+
+                let boton3 = document.getElementById("boton3")
+                boton3.onclick = () =>{
+                    alert(`Hola ${name}, en la Casa de ${houses[1].nombre}, nosotros valoramos más que nada: ${houses[1].valores}, nuestros colores son el ${houses[1].colores} y nuestro escudo es un ${houses[1].escudo}.`)
+                    console.log(`Has visitado la Sala Común de Ravenclaw`)
+                }
+
+                let boton4 = document.getElementById("boton4")
+                boton4.onclick = () =>{
+                    alert(`Hola ${name}, en la Casa de ${houses[2].nombre}, nosotros valoramos más que nada: ${houses[2].valores}, nuestros colores son el ${houses[2].colores} y nuestro escudo es una ${houses[2].escudo}.`)
+                    console.log(`Has visitado la Sala Común de Slytherin`)
+                }
+
+                let boton5 = document.getElementById("boton5")
+                boton5.onclick = () =>{
+                    alert(`Hola ${name}, en la Casa de ${houses[3].nombre}, nosotros valoramos más que nada: ${houses[3].valores}, nuestros colores son el ${houses[3].colores} y nuestro escudo es un ${houses[3].escudo}.`)
+                    console.log(`Has visitado la Sala Común de Hufflepuff`)
+                }
+
+                let boton6 = document.getElementById("boton6")
+                boton6.onclick = () =>{
+                    let casa = Number(prompt(`¿Cuál casa eliges? 
+                    \nElige 1 para ${houses[0].nombre}
+                    \nElige 2 para ${houses[1].nombre}
+                    \nElige 3 para ${houses[2].nombre}
+                    \nElige 4 para ${houses[3].nombre}
+                    \nElige 0 para salir`))
+
+                    const casaFinal = []
+
+                    while(casa != 0){
+                        switch(casa){
+                            case 1:
+                                alert(`Has elegido ser parte de ${casasG.nombre}`)
+                                casasG.mostrarCasa()
+                                casaFinal.push(`${houses[0].nombre}`)
+                                break;
+
+                            case 2:
+                                alert(`Has elegido ser parte de ${casasR.nombre}`)
+                                casasR.mostrarCasa()
+                                casaFinal.push(`${houses[1].nombre}`)
+                                break;
+
+                            case 3:
+                                alert(`Has elegido ser parte de ${casasS.nombre}`)
+                                casasS.mostrarCasa()
+                                casaFinal.push(`${houses[2].nombre}`)
+                                break;
+
+                            case 4:
+                                alert(`Has elegido ser parte de ${casasH.nombre}`)
+                                casasH.mostrarCasa()
+                                casaFinal.push(`${houses[3].nombre}`)
+                                break;
+
+                            default:
+                                alert(`Dato inexistente, prueba otra vez`)
+                                console.log(`Dato inexistente`)
+                                break;
+                        }
+                        if(casa == 1 || casa == 2 || casa == 3 || casa == 4){
+                            break
+                        } else{
+                            casa = Number(prompt(`A continuación elige a cuál casa perteneces en Hogwarts,
+                            \nElige 1 si es ${casasG.nombre}
+                            \nElige 2 si es ${casasR.nombre}
+                            \nElige 3 si es ${casasS.nombre}
+                            \nElige 4 si es ${casasH.nombre}
+                            \nElige 0 para salir.`))
+                        }
+                    }   
+
+                    console.log(perfil)
+
+                    function perfil (name, apellido, edad){
+                        alert(`Te llamas ${name} ${apellido} y tienes ${edad} años y estás en la casa de ${casaFinal}`)
+                    }
+        
                     perfil(name, apellido, edad)
+
+                    const perfilAlumno = {
+                        nombre: name,
+                        apellido: apellido,
+                        edad: edad,
+                        casa: casaFinal
+                    }
+
+                    console.log(perfilAlumno)
 
                     const libros = [     
                         {id:1, nombre: "Disipar las Nieblas del Futuro, Cassandra Vablatsky", categoría: "Libros", subcategoría: "optativa", precio: 350},
@@ -171,136 +210,17 @@ if(inicio ==`MAGO` || inicio == `BRUJA`){
                         {id:22, nombre: "Recreo con la Banshee, Gilderoy Lockhart", categoría: "Libros", subcategoría: "optativa", precio: 400},
                         ]
 
-                    alert(`Uniforme
-                    \nLos alumnos este año necesitarán:
-                    \n·Tres Túnicas sencillas de trabajo.\n·Un sombrero negro puntiagudo para uso diario.\n·Un par de guantes protectores.\n·Una capa de invierno.
-                    \nLibros
-                    \nTodos los alumnos deben tener un ejemplar de los siguientes libros:
-                    \n·${libros[7].nombre}\n·${libros[8].nombre}\n·${libros[4].nombre}\n·${libros[10].nombre}\n·${libros[9].nombre}\n·${libros[12].nombre}\n·${libros[2].nombre}\n·${libros[6].nombre}`)
-
-                    alert(`Del siguiente listado de libros, usa la palabra "Obligatoria" para filtrar los libros necesarios para tu curso.
-                    \n·${libros[0].nombre}\n·${libros[1].nombre}\n·${libros[2].nombre}\n·${libros[3].nombre}\n·${libros[4].nombre}\n·${libros[5].nombre}\n·${libros[6].nombre}\n·${libros[7].nombre}\n·${libros[8].nombre}\n·${libros[9].nombre}\n·${libros[10].nombre}\n·${libros[11].nombre}\n·${libros[12].nombre}\n·${libros[13].nombre}\n·${libros[14].nombre}\n·${libros[15].nombre}\n·${libros[16].nombre}\n·${libros[17].nombre}\n·${libros[18].nombre}\n·${libros[19].nombre}\n·${libros[20].nombre}\n·${libros[21].nombre}`)
-                    
-                    let filtrar = ""
-
-                    while (filtrar != "obligatoria"){
-                        filtrar = prompt(`Seleccione la subcategoría de la búsqueda`).toLowerCase()
-                    }
-
-                    let filtrados = libros.filter(el => el.subcategoría == filtrar)
-                    console.log(filtrados)
-                    alert(`Has filtrado los libros siguientes libros: 
-                    \n·${filtrados[0].nombre}\n·${filtrados[1].nombre}\n·${filtrados[2].nombre}\n·${filtrados[3].nombre}\n·${filtrados[4].nombre}\n·${filtrados[5].nombre}\n·${filtrados[6].nombre}\n·${filtrados[7].nombre}`)
-
-                    let libroEliminado = Number(prompt(`Del listado anterior seleccione un libro a eliminar ya que solo cuenta crédito suficiente para 7 libros:
-                    \nElige 1 para eliminar ${filtrados[0].nombre}
-                    \nElige 2 para eliminar ${filtrados[1].nombre}
-                    \nElige 3 para eliminar ${filtrados[2].nombre}
-                    \nElige 4 para eliminar ${filtrados[3].nombre}
-                    \nElige 5 para eliminar ${filtrados[4].nombre}
-                    \nElige 6 para eliminar ${filtrados[5].nombre}
-                    \nElige 7 para eliminar ${filtrados[6].nombre}
-                    \nElige 8 para eliminar ${filtrados[7].nombre}
-                    \nElige 0 para salir`))
-                    
-            while(libroEliminado != 0){
-                switch(libroEliminado){
-                    case 1:
-                        alert(`Has eliminado ${filtrados[0].nombre}`)
-                        console.log(`Has eliminado ${filtrados[0].nombre}`)
-                        filtrados.splice(0,1)
-                        break;
-
-                    case 2:
-                        alert(`Has eliminado ${filtrados[1].nombre}`)
-                        console.log(`Has eliminado ${filtrados[1].nombre}`)
-                        filtrados.splice(1,1)
-                        break;
-
-                    case 3:
-                        alert(`Has eliminado ${filtrados[2].nombre}`)
-                        console.log(`Has eliminado ${filtrados[2].nombre}`)
-                        filtrados.splice(2,1)
-                        break;
-
-                    case 4:
-                        alert(`Has eliminado ${filtrados[3].nombre}`)
-                        console.log(`Has eliminado ${filtrados[3].nombre}`)
-                        filtrados.splice(3,1)
-                        break;
-
-                    case 5:
-                        alert(`Has eliminado ${filtrados[4].nombre}`)
-                        console.log(`Has eliminado ${filtrados[4].nombre}`)
-                        filtrados.splice(4,1)
-                        break;
-                    
-                    case 6:
-                        alert(`Has eliminado ${filtrados[5].nombre}`)
-                        console.log(`Has eliminado ${filtrados[5].nombre}`)
-                        filtrados.splice(5,1)
-                        break;
-
-                    case 7:
-                        alert(`Has eliminado ${filtrados[6].nombre}`)
-                        console.log(`Has eliminado ${filtrados[6].nombre}`)
-                        filtrados.splice(6,1)
-                        break;
-                    
-                    case 8:
-                        alert(`Has eliminado ${filtrados[7].nombre}`)
-                        console.log(`Has eliminado ${filtrados[7].nombre}`)
-                        filtrados.splice(7,1)
-                        break;
-
-                    default:
-                        alert(`Dato inexistente, prueba otra vez`)
-                        console.log(`Dato inexistente`)
-                        break;
+                        alert(`Uniforme
+                        \nLos alumnos este año necesitarán:
+                        \n·Tres Túnicas sencillas de trabajo.\n·Un sombrero negro puntiagudo para uso diario.\n·Un par de guantes protectores.\n·Una capa de invierno.
+                        \nLibros
+                        \nTodos los alumnos deben tener un ejemplar de los siguientes libros:
+                        \n·${libros[7].nombre}\n·${libros[8].nombre}\n·${libros[4].nombre}\n·${libros[10].nombre}\n·${libros[9].nombre}\n·${libros[12].nombre}\n·${libros[2].nombre}\n·${libros[6].nombre}
+                        \nTe recomendamos ir a nuestra sección de productos para adquirir tu material escolar.`)
                 }
-                if(libroEliminado == 1 || libroEliminado == 2 || libroEliminado == 3 || libroEliminado == 4 || libroEliminado == 5 || libroEliminado == 6 || libroEliminado == 7 || libroEliminado == 8){
-                    break
-                } else{
-                    libroEliminado = Number(prompt(`Del listado anterior seleccione un libro a eliminar ya que solo cuenta crédito suficiente para 7 libros:
-                    \nElige 1 para eliminar
-                    \nElige 2 para eliminar ${filtrados[1].nombre}
-                    \nElige 3 para eliminar ${filtrados[2].nombre}
-                    \nElige 4 para eliminar ${filtrados[3].nombre}
-                    \nElige 5 para eliminar ${filtrados[4].nombre}
-                    \nElige 6 para eliminar ${filtrados[5].nombre}
-                    \nElige 7 para eliminar ${filtrados[6].nombre}
-                    \nElige 8 para eliminar ${filtrados[7].nombre}
-                    \nElige 0 para salir`))
-                }
-            }   
-
-            let total = filtrados.reduce((acum,item) => acum= acum + item.precio,0)
-            console.log(total)
-            for (const filtrado of filtrados){
-                console.log(`Elegiste ${filtrado.nombre} con valor de $${filtrado.precio}`)
-                alert(`El listado final de libros es el siguiente:
-            \n·${filtrado.nombre} con valor de $${filtrado.precio}`)
+            } else{
+                alert(`¡Vuelve cuando crezcas!`)
+                console.log(`Eres menor de edad, acceso denegado`)
+                location.reload()
             }
-            alert(`\nDando un total de ${filtrados.length} libros por un total de $${total}`)
-            console.log(filtrados)
-
-            const precio = filtrados.map(elemento => (elemento.precio))
-
-            console.log(precio)
-            console.log(Math.max(...precio))
-            console.log(`El libro más caro vale $${Math.max(...precio)}`)
-
-            let paquete = Number(prompt(`¿Cuántos paquetes de libros necesitas?`))
-
-            let paqueteFinal = filtrados.map(elemento => elemento.precio * paquete)
-            console.log(paqueteFinal)
-        } else{
-            alert(`¡Vuelve cuando crezcas!`)
-            console.log(`Eres menor de edad, acceso denegado`)
-            location.reload()
-        }
-}else {
-    alert(`¡No se permiten Muggles!`)
-    console.log(`Eres Muggle, acceso denegado`)
-    location.reload()
-}
+    }
