@@ -1,0 +1,76 @@
+.header{
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-template-areas: "titulo" "subtitulo" "logo" "navbar";
+    background-image: url(/images/fondo.jpg);
+    background-repeat: round;
+}
+
+.titulo{
+    grid-area: titulo;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+    color: rgb(245, 237, 169);
+}
+
+.subtitulo{
+    grid-area: subtitulo;
+    text-align: center;
+    font-family: monospace;
+    font-size: 15px;
+    color: #f5a9eb
+}
+
+.logo{
+    grid-area: logo;
+    width: 25%;
+    border-radius: 25px;
+}
+
+.nav-link{
+    text-align: center;
+}
+
+/** Desktop Breakpoint para desktop en el header **/ 
+@media screen and (min-width: 1024px) {
+    .header {
+        gap: 10px;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-areas: ". titulo ." ". subtitulo ." ". logo ." ". navbar .";
+        justify-items: center;
+    }
+
+    .titulo{
+        margin-top: 5%;
+    }
+
+    .navbar{
+        grid-area: navbar;
+        border-style: solid;
+        border-width: 5px;
+        border-color: #f5a9eb;
+        border-radius: 5px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .nav-link {
+        background-color: palevioletred;
+    }
+
+    .nav-link:hover {
+        background-color: #f5a9eb;
+        border-style: solid;
+        border-width: 5px;
+        border-color: white;
+        border-radius: 5px;
+    }
+
+    .nav-link:active {
+        background-color: coral;
+        transition: all, 0s;
+    }
+}

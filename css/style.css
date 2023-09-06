@@ -1,0 +1,485 @@
+@charset "UTF-8";
+/** Inicio de estilo en CSS **/
+/**reseteo**/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+/** Body **/
+.contenedorBody {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "header" "main" "footer"; }
+
+.header {
+  grid-area: header; }
+
+.main {
+  grid-area: main; }
+
+.footer {
+  grid-area: footer; }
+
+.header {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-areas: "titulo" "subtitulo" "logo" "navbar";
+  background-image: url(/images/fondo.jpg);
+  background-repeat: round; }
+
+.titulo {
+  grid-area: titulo;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 25px;
+  color: #f5eda9; }
+
+.subtitulo {
+  grid-area: subtitulo;
+  text-align: center;
+  font-family: monospace;
+  font-size: 15px;
+  color: #f5a9eb; }
+
+.logo {
+  grid-area: logo;
+  width: 25%;
+  border-radius: 25px; }
+
+.nav-link {
+  text-align: center; }
+
+/** Desktop Breakpoint para desktop en el header **/
+@media screen and (min-width: 1024px) {
+  .header {
+    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: ". titulo ." ". subtitulo ." ". logo ." ". navbar .";
+    justify-items: center; }
+  .titulo {
+    margin-top: 5%; }
+  .navbar {
+    grid-area: navbar;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #f5a9eb;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px; }
+  .nav-link {
+    background-color: palevioletred; }
+  .nav-link:hover {
+    background-color: #f5a9eb;
+    border-style: solid;
+    border-width: 5px;
+    border-color: white;
+    border-radius: 5px; }
+  .nav-link:active {
+    background-color: coral;
+    transition: all, 0s; } }
+
+/** Home Page **/
+/** Aquí empieza el estilo del main **/
+.contenedorMain {
+  width: 100%;
+  background-color: black;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-areas: "hogwarts" "sombrero" "gryffindor" "ravenclaw" "slytherin" "hufflepuff"; }
+
+.estiloH {
+  width: 100%;
+  grid-area: hogwarts;
+  background-color: black;
+  border-style: double;
+  border-color: darksalmon;
+  border-width: 5px; }
+
+.sombrero {
+  width: 100%;
+  grid-area: sombrero;
+  background-color: #dab45b;
+  border-style: double;
+  border-color: saddlebrown;
+  border-width: 5px; }
+
+.gryffindor {
+  width: 100%;
+  grid-area: gryffindor;
+  background-color: #9c1203;
+  border-style: double;
+  border-color: goldenrod;
+  border-width: 5px; }
+
+.ravenclaw {
+  width: 100%;
+  grid-area: ravenclaw;
+  background-color: #00165e;
+  border-style: double;
+  border-color: coral;
+  border-width: 5px; }
+
+.slytherin {
+  width: 100%;
+  grid-area: slytherin;
+  background-color: #033807;
+  border-style: double;
+  border-color: silver;
+  border-width: 5px; }
+
+.hufflepuff {
+  width: 100%;
+  grid-area: hufflepuff;
+  background-color: #e3a000;
+  border-style: double;
+  border-color: black;
+  border-width: 5px; }
+
+.imgIndex {
+  width: 50%;
+  margin: 25%; }
+
+.imgIndex:hover {
+  transform: scale(1.3);
+  transition: all,2s; }
+
+.boton1 {
+  background-color: #dab45b;
+  text-align: center;
+  margin-bottom: 5%;
+  margin-left: 39.27%; }
+
+.boton2 {
+  background-color: #9c1203;
+  margin-bottom: 5%;
+  margin-left: 39.27%; }
+
+.boton3 {
+  background-color: #00165e;
+  margin-bottom: 5%;
+  margin-left: 39.27%; }
+
+.boton4 {
+  background-color: #033807;
+  margin-bottom: 5%;
+  margin-left: 39.27%; }
+
+.boton5 {
+  background-color: #e3a000;
+  margin-bottom: 5%;
+  margin-left: 39.27%; }
+
+.boton6 {
+  background-color: #dab45b;
+  text-align: center;
+  margin-bottom: 5%;
+  margin-left: 40%; }
+
+/** Breakpoint Tablet **/
+@media screen and (min-width: 768px) {
+  .contenedorMain {
+    background-color: black;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "hogwarts sombrero" "gryffindor ravenclaw" "slytherin hufflepuff"; } }
+
+/** Breakpoint Desktop **/
+@media screen and (min-width: 1024px) {
+  .contenedorMain {
+    background-color: black;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "gryffindor sombrero slytherin" "ravenclaw hogwarts hufflepuff"; } }
+
+/** Productos Page **/
+/** Aquí inicia el estilo del main **/
+.mainProductos {
+  width: 100%;
+  display: grid;
+  gap: 30px;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-areas: "filtrar" "grillaProductos" "carrito";
+  background-color: #f5a9eb;
+  background-size: 35px 35px;
+  background-image: radial-gradient(#f5eda9 15%, transparent 15%), linear-gradient(45deg, transparent 48%, white 48%, white 52%, transparent 52%), linear-gradient(135deg, transparent 48%, white 48%, white 52%, transparent 52%);
+  border-width: 5px;
+  border-color: #e3a000;
+  border-style: double; }
+
+.filtrar {
+  grid-area: filtrar;
+  display: grid;
+  gap: 30px;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-areas: "h4" "input" "buscar"; }
+
+.tituloBuscar {
+  padding: 5px;
+  margin-top: 50px;
+  grid-area: h4;
+  color: white;
+  background-color: pink;
+  border-width: 5px;
+  border-color: #e3a000;
+  border-style: double; }
+
+.input {
+  grid-area: input;
+  border-width: 5px;
+  border-color: #e3a000;
+  border-style: double; }
+
+.buscar {
+  grid-area: buscar;
+  border-width: 5px;
+  border-color: #e3a000;
+  border-style: double; }
+
+.grillaProductos {
+  grid-area: grillaProductos;
+  width: 100%;
+  display: grid;
+  gap: 30px;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-areas: "imgEstilo1" "imgEstilo2" "imgEstilo3" "imgEstilo4" "imgEstilo5" "imgEstilo6" "imgEstilo7" "imgEstilo8" "imgEstilo9" "imgEstilo10" "imgEstilo11" "imgEstilo12" "imgEstilo13" "imgEstilo14" "imgEstilo15" "imgEstilo16" "imgEstilo17" "imgEstilo18" "imgEstilo19" "imgEstilo20" "imgEstilo21" "imgEstilo22" "imgEstilo23" "imgEstilo24" "imgEstilo25" "imgEstilo26" "imgEstilo27" "imgEstilo28" "imgEstilo29" "imgEstilo30" "imgEstilo31" "imgEstilo32" "imgEstilo33" "imgEstilo34" "imgEstilo35" "imgEstilo36" "imgEstilo37" "imgEstilo38" "imgEstilo39" "imgEstilo40" "imgEstilo41" "imgEstilo42" "imgEstilo43" "imgEstilo44" "imgEstilo45" "imgEstilo46" "imgEstilo47" "imgEstilo48"; }
+
+.estiloImg {
+  width: 80%;
+  background-color: white;
+  padding: 20px;
+  margin-top: 50px;
+  margin-right: 50px;
+  margin-left: 50px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  border-width: 5px;
+  border-color: #e3a000;
+  border-style: double; }
+
+.grillaEstilo {
+  width: 100%; }
+
+.imgEstilo1 {
+  grid-area: imgEstilo1; }
+
+.imgEstilo2 {
+  grid-area: imgEstilo2; }
+
+.imgEstilo3 {
+  grid-area: imgEstilo3; }
+
+.imgEstilo4 {
+  grid-area: imgEstilo4; }
+
+.imgEstilo5 {
+  grid-area: imgEstilo5; }
+
+.imgEstilo6 {
+  grid-area: imgEstilo6; }
+
+.imgEstilo7 {
+  grid-area: imgEstilo7; }
+
+.imgEstilo8 {
+  grid-area: imgEstilo8; }
+
+.imgEstilo9 {
+  grid-area: imgEstilo9; }
+
+.imgEstilo10 {
+  grid-area: imgEstilo10; }
+
+.imgEstilo11 {
+  grid-area: imgEstilo11; }
+
+.imgEstilo12 {
+  grid-area: imgEstilo12; }
+
+.imgEstilo13 {
+  grid-area: imgEstilo13; }
+
+.imgEstilo14 {
+  grid-area: imgEstilo14; }
+
+.imgEstilo15 {
+  grid-area: imgEstilo15; }
+
+.imgEstilo16 {
+  grid-area: imgEstilo16; }
+
+.imgEstilo17 {
+  grid-area: imgEstilo17; }
+
+.imgEstilo18 {
+  grid-area: imgEstilo18; }
+
+.imgEstilo19 {
+  grid-area: imgEstilo19; }
+
+.imgEstilo20 {
+  grid-area: imgEstilo20; }
+
+.imgEstilo21 {
+  grid-area: imgEstilo21; }
+
+.imgEstilo22 {
+  grid-area: imgEstilo22; }
+
+.imgEstilo23 {
+  grid-area: imgEstilo23; }
+
+.imgEstilo24 {
+  grid-area: imgEstilo24; }
+
+.imgEstilo25 {
+  grid-area: imgEstilo25; }
+
+.imgEstilo26 {
+  grid-area: imgEstilo26; }
+
+.imgEstilo27 {
+  grid-area: imgEstilo27; }
+
+.imgEstilo28 {
+  grid-area: imgEstilo28; }
+
+.imgEstilo29 {
+  grid-area: imgEstilo29; }
+
+.imgEstilo30 {
+  grid-area: imgEstilo30; }
+
+.imgEstilo31 {
+  grid-area: imgEstilo31; }
+
+.imgEstilo32 {
+  grid-area: imgEstilo32; }
+
+.imgEstilo33 {
+  grid-area: imgEstilo33; }
+
+.imgEstilo34 {
+  grid-area: imgEstilo34; }
+
+.imgEstilo35 {
+  grid-area: imgEstilo35; }
+
+.imgEstilo36 {
+  grid-area: imgEstilo36; }
+
+.imgEstilo37 {
+  grid-area: imgEstilo37; }
+
+.imgEstilo38 {
+  grid-area: imgEstilo38; }
+
+.imgEstilo39 {
+  grid-area: imgEstilo39; }
+
+.imgEstilo40 {
+  grid-area: imgEstilo40; }
+
+.imgEstilo41 {
+  grid-area: imgEstilo41; }
+
+.imgEstilo42 {
+  grid-area: imgEstilo42; }
+
+.imgEstilo43 {
+  grid-area: imgEstilo43; }
+
+.imgEstilo44 {
+  grid-area: imgEstilo44; }
+
+.imgEstilo45 {
+  grid-area: imgEstilo45; }
+
+.imgEstilo46 {
+  grid-area: imgEstilo46; }
+
+.imgEstilo47 {
+  grid-area: imgEstilo47; }
+
+.imgEstilo48 {
+  grid-area: imgEstilo48; }
+
+#carrito {
+  grid-area: carrito;
+  justify-items: center;
+  background-color: white;
+  border-width: 5px;
+  border-color: #e3a000;
+  border-style: double; }
+
+.precioProducto {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #d45b2e;
+  justify-items: center;
+  background-color: pink;
+  border-width: 5px;
+  border-color: palevioletred;
+  border-style: double;
+  padding: 50px; }
+
+/**Breakpoint Tablet **/
+@media screen and (min-width: 768px) {
+  .buscar {
+    padding-right: 50px;
+    padding-left: 50px; }
+  .grillaProductos {
+    width: 100%;
+    display: grid;
+    gap: 30px;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "imgEstilo1 imgEstilo2" "imgEstilo3 imgEstilo4" "imgEstilo5 imgEstilo6" "imgEstilo7 imgEstilo8" "imgEstilo9 imgEstilo10" "imgEstilo11 imgEstilo12" "imgEstilo13 imgEstilo14" "imgEstilo15 imgEstilo16" "imgEstilo17 imgEstilo18" "imgEstilo19 imgEstilo20"  "imgEstilo21 imgEstilo22" "imgEstilo23 imgEstilo24" "imgEstilo25 imgEstilo26" "imgEstilo27 imgEstilo28" "imgEstilo29 imgEstilo30" "imgEstilo31 imgEstilo32" "imgEstilo33 imgEstilo34" "imgEstilo35 imgEstilo36" "imgEstilo37 imgEstilo38" "imgEstilo39 imgEstilo40" "imgEstilo41 imgEstilo42" "imgEstilo43 imgEstilo44" "imgEstilo45 imgEstilo46" "imgEstilo47 imgEstilo48"; } }
+
+/** Breakpoint Desktop **/
+@media screen and (min-width: 1024px) {
+  .grillaProductos {
+    width: 100%;
+    display: grid;
+    gap: 30px;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "imgEstilo1 imgEstilo2 imgEstilo3" "imgEstilo4 imgEstilo5 imgEstilo6" "imgEstilo7 imgEstilo8 imgEstilo9" "imgEstilo10 imgEstilo11 imgEstilo12" "imgEstilo13 imgEstilo14 imgEstilo15" "imgEstilo16 imgEstilo17 imgEstilo18" "imgEstilo19 imgEstilo20 imgEstilo21" "imgEstilo22 imgEstilo23 imgEstilo24" "imgEstilo25 imgEstilo26 imgEstilo27" "imgEstilo28 imgEstilo29 imgEstilo30" "imgEstilo31 imgEstilo32 imgEstilo33" "imgEstilo34 imgEstilo35 imgEstilo36" "imgEstilo37 imgEstilo38 imgEstilo39" "imgEstilo40 imgEstilo41 imgEstilo42" "imgEstilo43 imgEstilo44 imgEstilo45" "imgEstilo46 imgEstilo47 imgEstilo48"; } }
+
+/** Aquí inicia el estilo del footer **/
+.footer {
+  width: 100%;
+  background-image: url(/images/fondo.jpg);
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-areas: "p2" "iconos"; }
+
+.p2 {
+  grid-area: p2;
+  color: #f5eda9; }
+
+.iconos {
+  grid-area: iconos;
+  display: grid;
+  gap: 10px;
+  padding: 0px; }
+
+.logoFooter {
+  display: block;
+  text-decoration: none; }
+
+.imgFooter {
+  filter: invert(58%) sepia(59%) saturate(499%) hue-rotate(231deg) brightness(100%) contrast(93%); }
+
+.imgFooter:hover {
+  transform: scale(1.2);
+  transition: all,2s; }
