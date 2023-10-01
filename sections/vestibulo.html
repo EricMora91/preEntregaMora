@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="ecomerce, Hogwarts, magia">
+    <meta name="description" content="Bienvenido al Callejón de la Bruja Tuerta, la tienda en línea más completa en útiles de hogwarts, checa nuestros productos">
+    <title>El Callejón de la Bruja Tuerta</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"><!--link toastify -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"><!--cdn bootstrap -->
+    <link rel="stylesheet" href="../css/style.css"><!--estilo en css -->
+</head>
+<body>
+    <div class="contenedorBody"><!--Contenedor de la página -->
+        <header class="header"><!--Encabezado de la página -->
+            <h1 class="titulo">El Callejón de la Bruja Tuerta</h1><!--Título de la página -->
+            <h3 class="subtitulo">Tienda virtual para magos</h3>
+            <img class= "logo" src="/images/El callejón de la bruja tuerta.png" alt="Logotipo de una esfera de cristal y las manos de una bruja"><!--Logo de la página -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg"><!--Aquí inicia la barra de navegación -->
+                <div class="container-fluid"> <!--Contenedor de la barra de navegación -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <!--Barra de hamburguesa -->
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/index.html">Inicio</a> <!-- Hipervínculo a la página inicio-->
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="./vestibulo.html">Vestíbulo</a> <!--Hipervínculo a la página vestíbulo -->
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="./productos.html">Productos</a> <!--Hipervínculo a la página productos -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="main"> <!--Inicia el contenido principal de la página-->
+            <div class="contenedorMain"> <!--Contenedor de la pagina principal-->
+                <picture class="estiloH">
+                    <source media="(min-width:1024px)" srcset="/images/hogwarts1024.png"> <!--Imagen a usar a partir de 1024px desktop -->
+                    <source media="(min-width:768px)" srcset="/images/hogwarts768.png"> <!--Imagen a usar a partir de 768px tablet -->
+                    <source media="(min-width:480px)" srcset="/images/hogwarts.png"> <!--Mobile First  -->
+                    <img class="imgIndex" src="/images/hogwarts.png" alt="logo de hogwarts">
+                </picture>
+                <picture class="casas sombrero">
+                    <source media="(min-width:1024px)" srcset="/images/sombrero1024.png"> <!--Imagen a usar a partir de 1024px desktop -->
+                    <source media="(min-width:768px)" srcset="/images/sombrero768.png"> <!--Imagen a usar a partir de 768px tablet -->
+                    <source media="(min-width:480px)" srcset="/images/sombrero.png"> <!--Mobile First  -->
+                    <img class="imgIndex" src="/images/sombrero.png" alt="imagen del sombrero seleccionador">
+                    <button id="boton1" class="boton1 botonesMain">Información</button>
+                    <div class="dropdown">
+                        <button class="btn  dropdown-toggle boton6 botonesMain" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Elegir Casa
+                        </button>
+                        <select class="dropdown-menu" id="listaCasas"><!--lista despegable de opciones -->
+                            <option>¿Cuál casa eliges?</option>
+                            <option class="dropdown-item" value="Gryffindor">Gryffindor</option>
+                            <option class="dropdown-item" value="Ravenclaw">Ravenclaw</option>
+                            <option class="dropdown-item" value="Slytherin">Slytherin</option>
+                            <option class="dropdown-item" value="Hufflepuff">Hufflepuff</option>
+                        </select>
+                    </div>
+                </picture>
+                <picture class="casas gryffindor">
+                    <source media="(min-width:1024px)" srcset="/images/gryffindor1024.png"> <!--Imagen a usar a partir de 1024px desktop -->
+                    <source media="(min-width:768px)" srcset="/images/gryffindor768.png"> <!--Imagen a usar a partir de 768px tablet -->
+                    <source media="(min-width:480px)" srcset="/images/gryffindor.png"> <!--Mobile First  -->
+                    <img class="imgIndex" src="/images/gryffindor.png" alt="logo de gryffindor">
+                    <button id="boton2" class="boton2 botonesMain">Información</button>
+                </picture>
+                <picture class="casas ravenclaw">
+                    <source media="(min-width:1024px)" srcset="/images/ravenclaw1024.png"> <!--Imagen a usar a partir de 1024px desktop -->
+                    <source media="(min-width:768px)" srcset="/images/ravenclaw768.png"> <!--Imagen a usar a partir de 768px tablet -->
+                    <source media="(min-width:480px)" srcset="/images/ravenclaw.png"> <!--Mobile First  -->
+                    <img class="imgIndex" src="/images/ravenclaw.png" alt="logo de ravenclaw">
+                    <button id="boton3" class="boton3 botonesMain">Información</button>
+                </picture>
+                <picture class="casas slytherin">
+                    <source media="(min-width:1024px)" srcset="/images/slytherin1024.png"> <!--Imagen a usar a partir de 1024px desktop -->
+                    <source media="(min-width:768px)" srcset="/images/slytherin768.png"> <!--Imagen a usar a partir de 768px tablet -->
+                    <source media="(min-width:480px)" srcset="/images/slytherin.png"> <!--Mobile First  -->
+                    <img class="imgIndex" src="/images/slytherin.png" alt="logo de slytherin">
+                    <button id="boton4" class="boton4 botonesMain">Información</button>
+                </picture>
+                <picture class="casas hufflepuff">
+                    <source media="(min-width:1024px)" srcset="/images/hufflepuff1024.png"> <!--Imagen a usar a partir de 1024px desktop -->
+                    <source media="(min-width:768px)" srcset="/images/hufflepuff768.png"> <!--Imagen a usar a partir de 768px tablet -->
+                    <source media="(min-width:480px)" srcset="/images/hufflepuff.png"> <!--Mobile First  -->
+                    <img class="imgIndex" src="/images/hufflepuff.png" alt="logo de hufflepuff">
+                    <button id="boton5" class="boton5 botonesMain">Información</button>
+                </picture>
+            </div>
+        </main>
+        <footer class="footer"> <!--Inicia el contenido de pie de página-->
+            <p class="p2" id="p2">Redes Sociales</p>
+            <ul class="iconos">
+                <li class="logoFooter"><a href="https://es-la.facebook.com/labrujatuerta.ver/" target="_blank"><img class="imgFooter" src="../images/facebook.png" alt="logo de facebook" height="60px" width="60px"></a></li> <!--Enlace para dirigirse a la página de facebook vinculada al sitio web -->
+                <li class="logoFooter"><a href="https://www.instagram.com/labrujatuerta.ver/?hl=es" target="_blank"><img class="imgFooter" src="../images/instagram.png" alt="logo de instagram" height="60px" width="60px"></a></li> <!--Enlace para dirigirse a la página de instagram vinculada al sitio web -->
+            </ul>
+        </footer> <!--Termina el contenido de pie de página-->   
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script><!--cdn sweet alert -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script><!--cdn toastify -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script><!--bootstrap -->
+    <script src="/script2.js" type="module"></script>
+</body>
+</html>

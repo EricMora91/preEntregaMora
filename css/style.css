@@ -21,13 +21,15 @@
 .footer {
   grid-area: footer; }
 
+/** Aquí inicia el estilo del header **/
 .header {
   display: grid;
   justify-items: center;
   grid-template-columns: 1fr;
-  grid-template-areas: "titulo" "subtitulo" "logo" "navbar";
-  background-image: url(/images/fondo.jpg);
-  background-repeat: round; }
+  grid-template-areas: "titulo" "subtitulo" "logo";
+  background: url(/images/fondo.jpg);
+  background-size: cover;
+  background-position: center; }
 
 .titulo {
   grid-area: titulo;
@@ -45,43 +47,110 @@
 
 .logo {
   grid-area: logo;
-  width: 25%;
-  border-radius: 25px; }
+  width: 15%;
+  border-radius: 15px;
+  margin: 5px; }
+
+.d-flex {
+  display: flex;
+  justify-content: center; }
 
 .nav-link {
+  color: palevioletred;
   text-align: center; }
+
+.nav-link:hover {
+  color: white;
+  background-color: #f5a9eb;
+  border-style: solid;
+  border-width: 5px;
+  border-color: white;
+  border-radius: 5px; }
+
+.nav-link:active {
+  background-color: coral;
+  transition: all, 0s; }
+
+/** Tablet Breakpoint **/
+@media screen and (min-width: 768px) {
+  .header {
+    background: url(/images/fondo768.jpg);
+    background-position: center;
+    width: 100%; } }
 
 /** Desktop Breakpoint para desktop en el header **/
 @media screen and (min-width: 1024px) {
   .header {
-    gap: 10px;
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-areas: ". titulo ." ". subtitulo ." ". logo ." ". navbar .";
+    background: url(/images/fondo1024.jpg);
+    background-size: cover;
+    background-position: center;
     justify-items: center; }
   .titulo {
     margin-top: 5%; }
+  .logo {
+    width: 10%;
+    margin-bottom: 10px; }
   .navbar {
-    grid-area: navbar;
-    border-style: solid;
-    border-width: 5px;
-    border-color: #f5a9eb;
+    background-color: palevioletred;
+    width: 100%;
+    position: fixed; }
+  .botonCarrito {
+    background-color: white;
     border-radius: 5px;
-    margin-top: 20px;
-    margin-bottom: 20px; }
-  .nav-link {
-    background-color: palevioletred; }
-  .nav-link:hover {
+    color: palevioletred;
+    text-align: center; }
+  .botonCarrito:hover {
+    color: white;
     background-color: #f5a9eb;
     border-style: solid;
     border-width: 5px;
     border-color: white;
-    border-radius: 5px; }
-  .nav-link:active {
-    background-color: coral;
-    transition: all, 0s; } }
+    border-radius: 5px; } }
 
 /** Home Page **/
+/** Aquí inicia el estilo del main **/
+.mainIndex {
+  background: url(/images/muro.jpg);
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  grid-template-columns: "contenedorInicio";
+  justify-content: center; }
+
+.contenedorInicio {
+  padding: 5%;
+  margin: 5%;
+  grid-area: contenderoInicio;
+  background-color: #dab45b;
+  border-style: double;
+  border-color: saddlebrown;
+  border-width: 5px; }
+
+.inicio {
+  color: saddlebrown;
+  background-color: burlywood;
+  border-style: double;
+  border-color: darkgoldenrod;
+  border-width: 5px;
+  padding: 2%; }
+
+.input {
+  background-color: antiquewhite; }
+
+@media screen and (min-width: 768px) {
+  .mainIndex {
+    background: url(/images/muro768.jpg);
+    background-size: cover;
+    background-position: center; } }
+
+/** Breakpoint Desktop **/
+@media screen and (min-width: 1024px) {
+  .mainIndex {
+    background: url(/images/muro1024.jpg);
+    background-size: cover;
+    background-position: center; } }
+
+/** Vestíbulo Page **/
 /** Aquí empieza el estilo del main **/
 .contenedorMain {
   width: 100%;
@@ -145,39 +214,43 @@
 
 .imgIndex:hover {
   transform: scale(1.3);
-  transition: all,2s; }
+  transition: all, 2s; }
 
 .boton1 {
-  background-color: #dab45b;
-  text-align: center;
-  margin-bottom: 5%;
-  margin-left: 39.27%; }
+  margin-left: 40.7613%;
+  background-color: #dab45b; }
 
 .boton2 {
-  background-color: #9c1203;
-  margin-bottom: 5%;
-  margin-left: 39.27%; }
+  margin-left: 40.7613%;
+  background-color: #9c1203; }
 
 .boton3 {
-  background-color: #00165e;
-  margin-bottom: 5%;
-  margin-left: 39.27%; }
+  margin-left: 40.7613%;
+  background-color: #00165e; }
 
 .boton4 {
-  background-color: #033807;
-  margin-bottom: 5%;
-  margin-left: 39.27%; }
+  margin-left: 40.7613%;
+  background-color: #033807; }
 
 .boton5 {
-  background-color: #e3a000;
-  margin-bottom: 5%;
-  margin-left: 39.27%; }
+  margin-left: 40.7613%;
+  background-color: #e3a000; }
 
 .boton6 {
-  background-color: #dab45b;
-  text-align: center;
+  margin-left: 40%;
+  background-color: #dab45b; }
+
+.botonesMain {
+  color: black;
+  padding: 5px;
+  border: 1px solid black;
   margin-bottom: 5%;
-  margin-left: 40%; }
+  cursor: pointer;
+  border-radius: 5px; }
+
+.botonesMain:hover {
+  box-shadow: 0 0 10px black;
+  scale: 1.05; }
 
 /** Breakpoint Tablet **/
 @media screen and (min-width: 768px) {
@@ -202,10 +275,9 @@
 .mainProductos {
   width: 100%;
   display: grid;
-  gap: 30px;
   justify-items: center;
   grid-template-columns: 1fr;
-  grid-template-areas: "filtrar" "grillaProductos" "carrito";
+  grid-template-areas: "rango" "filtrar" "grillaProductos";
   background-color: #f5a9eb;
   background-size: 35px 35px;
   background-image: radial-gradient(#f5eda9 15%, transparent 15%), linear-gradient(45deg, transparent 48%, white 48%, white 52%, transparent 52%), linear-gradient(135deg, transparent 48%, white 48%, white 52%, transparent 52%);
@@ -216,14 +288,13 @@
 .filtrar {
   grid-area: filtrar;
   display: grid;
-  gap: 30px;
   justify-items: center;
   grid-template-columns: 1fr;
   grid-template-areas: "h4" "input" "buscar"; }
 
 .tituloBuscar {
   padding: 5px;
-  margin-top: 50px;
+  margin-top: 25px;
   grid-area: h4;
   color: white;
   background-color: pink;
@@ -250,24 +321,44 @@
   gap: 30px;
   justify-items: center;
   grid-template-columns: 1fr;
-  grid-template-areas: "imgEstilo1" "imgEstilo2" "imgEstilo3" "imgEstilo4" "imgEstilo5" "imgEstilo6" "imgEstilo7" "imgEstilo8" "imgEstilo9" "imgEstilo10" "imgEstilo11" "imgEstilo12" "imgEstilo13" "imgEstilo14" "imgEstilo15" "imgEstilo16" "imgEstilo17" "imgEstilo18" "imgEstilo19" "imgEstilo20" "imgEstilo21" "imgEstilo22" "imgEstilo23" "imgEstilo24" "imgEstilo25" "imgEstilo26" "imgEstilo27" "imgEstilo28" "imgEstilo29" "imgEstilo30" "imgEstilo31" "imgEstilo32" "imgEstilo33" "imgEstilo34" "imgEstilo35" "imgEstilo36" "imgEstilo37" "imgEstilo38" "imgEstilo39" "imgEstilo40" "imgEstilo41" "imgEstilo42" "imgEstilo43" "imgEstilo44" "imgEstilo45" "imgEstilo46" "imgEstilo47" "imgEstilo48"; }
+  grid-template-areas: "imgEstilo1" "imgEstilo2" "imgEstilo3" "imgEstilo4" "imgEstilo5" "imgEstilo6" "imgEstilo7" "imgEstilo8" "imgEstilo9" "imgEstilo10" "imgEstilo11" "imgEstilo12" "imgEstilo13" "imgEstilo14" "imgEstilo15" "imgEstilo16" "imgEstilo17" "imgEstilo18" "imgEstilo19" "imgEstilo20" "imgEstilo21" "imgEstilo22" "imgEstilo23" "imgEstilo24" "imgEstilo25" "imgEstilo26" "imgEstilo27" "imgEstilo28" "imgEstilo29" "imgEstilo30" "imgEstilo31" "imgEstilo32" "imgEstilo33" "imgEstilo34" "imgEstilo35" "imgEstilo36" "imgEstilo37" "imgEstilo38" "imgEstilo39" "imgEstilo40" "imgEstilo41" "imgEstilo42" "imgEstilo43" "imgEstilo44" "imgEstilo45" "imgEstilo46" "."; }
 
-.estiloImg {
-  width: 80%;
+.productoEstilo {
+  width: 50%;
   background-color: white;
   padding: 20px;
-  margin-top: 50px;
-  margin-right: 50px;
-  margin-left: 50px;
-  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  border-width: 5px;
+  border-width: 1.5px;
   border-color: #e3a000;
-  border-style: double; }
+  border-style: solid;
+  border-radius: 5px;
+  transition: 0.3s; }
+
+.productoEstilo:hover {
+  box-shadow: 0 0 10px #e3a000;
+  scale: 1.05; }
+
+.productoNombre {
+  text-align: center;
+  text-transform: capitalize; }
+
+.productoPrecio {
+  text-align: center; }
+
+.productoBoton {
+  display: block;
+  margin: 10px auto;
+  padding: 5px 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: darksalmon;
+  color: aliceblue; }
 
 .grillaEstilo {
-  width: 100%; }
+  width: 100%;
+  height: 100%; }
 
 .imgEstilo1 {
   grid-area: imgEstilo1; }
@@ -413,36 +504,101 @@
 .imgEstilo48 {
   grid-area: imgEstilo48; }
 
+.modal-header {
+  display: block;
+  background-color: palevioletred;
+  color: aliceblue;
+  text-align: center; }
+
 #carrito {
-  grid-area: carrito;
-  justify-items: center;
-  background-color: white;
-  border-width: 5px;
-  border-color: #e3a000;
-  border-style: double; }
+  display: block;
+  position: relative;
+  padding: 20px; }
+
+.productoEnCarrito {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e3a000; }
+
+.estiloCarrito {
+  display: flex;
+  align-items: center;
+  text-align: center; }
+
+.imgCarrito {
+  width: 15%; }
+
+.botonCantidad {
+  text-align: center;
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 32px;
+  display: inline-block;
+  border: none;
+  background: transparent; }
+
+.iconoCantidad {
+  padding: 5px;
+  border-radius: 50%;
+  border: 1px solid black;
+  cursor: pointer; }
+
+.boton-eliminar {
+  cursor: pointer;
+  background: transparent;
+  display: block;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 5px; }
 
 .precioProducto {
+  text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #d45b2e;
   justify-items: center;
-  background-color: pink;
-  border-width: 5px;
-  border-color: palevioletred;
-  border-style: double;
-  padding: 50px; }
+  background-color: white;
+  border-width: 1px;
+  border-color: #e3a000;
+  border-style: solid; }
+
+.modal-footer {
+  display: block;
+  background-color: palevioletred;
+  color: aliceblue;
+  text-align: center; }
+
+.botonFooter {
+  cursor: pointer;
+  transition: 0.3s; }
+
+.botonFooter:hover {
+  color: white;
+  scale: 1.1;
+  box-shadow: 0 0 10px black; }
+
+#botonPagar {
+  color: white;
+  background-color: #e3a000; }
 
 /**Breakpoint Tablet **/
 @media screen and (min-width: 768px) {
   .buscar {
     padding-right: 50px;
     padding-left: 50px; }
+  .productoEstilo {
+    width: 80%; }
   .grillaProductos {
     width: 100%;
     display: grid;
     gap: 30px;
     justify-items: center;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "imgEstilo1 imgEstilo2" "imgEstilo3 imgEstilo4" "imgEstilo5 imgEstilo6" "imgEstilo7 imgEstilo8" "imgEstilo9 imgEstilo10" "imgEstilo11 imgEstilo12" "imgEstilo13 imgEstilo14" "imgEstilo15 imgEstilo16" "imgEstilo17 imgEstilo18" "imgEstilo19 imgEstilo20"  "imgEstilo21 imgEstilo22" "imgEstilo23 imgEstilo24" "imgEstilo25 imgEstilo26" "imgEstilo27 imgEstilo28" "imgEstilo29 imgEstilo30" "imgEstilo31 imgEstilo32" "imgEstilo33 imgEstilo34" "imgEstilo35 imgEstilo36" "imgEstilo37 imgEstilo38" "imgEstilo39 imgEstilo40" "imgEstilo41 imgEstilo42" "imgEstilo43 imgEstilo44" "imgEstilo45 imgEstilo46" "imgEstilo47 imgEstilo48"; } }
+    grid-template-areas: "imgEstilo1 imgEstilo2" "imgEstilo3 imgEstilo4" "imgEstilo5 imgEstilo6" "imgEstilo7 imgEstilo8" "imgEstilo9 imgEstilo10" "imgEstilo11 imgEstilo12" "imgEstilo13 imgEstilo14" "imgEstilo15 imgEstilo16" "imgEstilo17 imgEstilo18" "imgEstilo19 imgEstilo20" "imgEstilo21 imgEstilo22" "imgEstilo23 imgEstilo24" "imgEstilo25 imgEstilo26" "imgEstilo27 imgEstilo28" "imgEstilo29 imgEstilo30" "imgEstilo31 imgEstilo32" "imgEstilo33 imgEstilo34" "imgEstilo35 imgEstilo36" "imgEstilo37 imgEstilo38" "imgEstilo39 imgEstilo40" "imgEstilo41 imgEstilo42" "imgEstilo43 imgEstilo44" "imgEstilo45 imgEstilo46" ". ."; } }
 
 /** Breakpoint Desktop **/
 @media screen and (min-width: 1024px) {
@@ -452,12 +608,14 @@
     gap: 30px;
     justify-items: center;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "imgEstilo1 imgEstilo2 imgEstilo3" "imgEstilo4 imgEstilo5 imgEstilo6" "imgEstilo7 imgEstilo8 imgEstilo9" "imgEstilo10 imgEstilo11 imgEstilo12" "imgEstilo13 imgEstilo14 imgEstilo15" "imgEstilo16 imgEstilo17 imgEstilo18" "imgEstilo19 imgEstilo20 imgEstilo21" "imgEstilo22 imgEstilo23 imgEstilo24" "imgEstilo25 imgEstilo26 imgEstilo27" "imgEstilo28 imgEstilo29 imgEstilo30" "imgEstilo31 imgEstilo32 imgEstilo33" "imgEstilo34 imgEstilo35 imgEstilo36" "imgEstilo37 imgEstilo38 imgEstilo39" "imgEstilo40 imgEstilo41 imgEstilo42" "imgEstilo43 imgEstilo44 imgEstilo45" "imgEstilo46 imgEstilo47 imgEstilo48"; } }
+    grid-template-areas: "imgEstilo1 imgEstilo2 imgEstilo3" "imgEstilo4 imgEstilo5 imgEstilo6" "imgEstilo7 imgEstilo8 imgEstilo9" "imgEstilo10 imgEstilo11 imgEstilo12" "imgEstilo13 imgEstilo14 imgEstilo15" "imgEstilo16 imgEstilo17 imgEstilo18" "imgEstilo19 imgEstilo20 imgEstilo21" "imgEstilo22 imgEstilo23 imgEstilo24" "imgEstilo25 imgEstilo26 imgEstilo27" "imgEstilo28 imgEstilo29 imgEstilo30" "imgEstilo31 imgEstilo32 imgEstilo33" "imgEstilo34 imgEstilo35 imgEstilo36" "imgEstilo37 imgEstilo38 imgEstilo39" "imgEstilo40 imgEstilo41 imgEstilo42" "imgEstilo43 imgEstilo44 imgEstilo45" "imgEstilo46 imgEstilo47 imgEstilo48" ". . ."; } }
 
 /** Aquí inicia el estilo del footer **/
 .footer {
   width: 100%;
-  background-image: url(/images/fondo.jpg);
+  background: url(/images/fondo.jpg);
+  background-size: cover;
+  background-position: center;
   display: grid;
   justify-items: center;
   grid-template-columns: 1fr;
@@ -483,3 +641,19 @@
 .imgFooter:hover {
   transform: scale(1.2);
   transition: all,2s; }
+
+/** Breakpoint Tablet **/
+@media screen and (min-width: 768px) {
+  .footer {
+    width: 100%;
+    background: url(/images/fondo768.jpg);
+    background-size: cover;
+    background-position: center; } }
+
+/** Breakpoint Desktop **/
+@media screen and (min-width: 1024px) {
+  .footer {
+    width: 100%;
+    background: url(/images/fondo1024.jpg);
+    background-size: cover;
+    background-position: center; } }

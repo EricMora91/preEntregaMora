@@ -2,7 +2,9 @@
 
 .footer{
     width: 100%;
-    background-image: url(/images/fondo.jpg);
+    background: url(/images/fondo.jpg);
+    background-size: cover;
+    background-position: center;
     display: grid;
     justify-items: center;
     grid-template-columns: 1fr;
@@ -33,4 +35,22 @@
 .imgFooter:hover{
     transform: scale(1.2);
     transition: all,2s ;
+}
+
+/** Breakpoint Tablet **/
+@media screen and (min-width: 768px) {
+    .footer{
+        width: 100%;
+        background: url(/images/fondo768.jpg);
+        background-size: cover;
+        background-position: center;}
+}
+
+/** Breakpoint Desktop **/
+@media screen and (min-width: 1024px) {
+    .footer{
+        width: 100%;
+        background: url(/images/fondo1024.jpg);
+        background-size: cover;
+        background-position: center;}
 }

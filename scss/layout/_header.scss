@@ -1,76 +1,107 @@
-.header{
+/** Aquí inicia el estilo del header **/
+.header {
     display: grid;
     justify-items: center;
     grid-template-columns: 1fr;
-    grid-template-areas: "titulo" "subtitulo" "logo" "navbar";
-    background-image: url(/images/fondo.jpg);
-    background-repeat: round;
+    grid-template-areas: "titulo" "subtitulo" "logo";
+    background: url(/images/fondo.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
-.titulo{
+.titulo {
     grid-area: titulo;
     text-align: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 25px;
-    color: rgb(245, 237, 169);
+    color: #f5eda9;
 }
 
-.subtitulo{
+.subtitulo {
     grid-area: subtitulo;
     text-align: center;
     font-family: monospace;
     font-size: 15px;
-    color: #f5a9eb
+    color: #f5a9eb;
 }
 
-.logo{
+.logo {
     grid-area: logo;
-    width: 25%;
-    border-radius: 25px;
+    width: 15%;
+    border-radius: 15px;
+    margin: 5px;
 }
 
-.nav-link{
+.d-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-link {
+    color: palevioletred;
     text-align: center;
 }
 
-/** Desktop Breakpoint para desktop en el header **/ 
+.nav-link:hover {
+    color: white;
+    background-color: #f5a9eb;
+    border-style: solid;
+    border-width: 5px;
+    border-color: white;
+    border-radius: 5px;
+}
+
+.nav-link:active {
+    background-color: coral;
+    transition: all, 0s;
+}
+
+/** Tablet Breakpoint **/
+@media screen and (min-width: 768px) {
+    .header {
+        background: url(/images/fondo768.jpg);
+        background-position: center;
+        width: 100%;
+    }
+}
+
+/** Desktop Breakpoint para desktop en el header **/
 @media screen and (min-width: 1024px) {
     .header {
-        gap: 10px;
-        display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
-        grid-template-areas: ". titulo ." ". subtitulo ." ". logo ." ". navbar .";
+        background: url(/images/fondo1024.jpg);
+        background-size: cover;
+        background-position: center;
         justify-items: center;
     }
 
-    .titulo{
+    .titulo {
         margin-top: 5%;
     }
 
-    .navbar{
-        grid-area: navbar;
-        border-style: solid;
-        border-width: 5px;
-        border-color: #f5a9eb;
-        border-radius: 5px;
-        margin-top: 20px;
-        margin-bottom: 20px;
+    .logo {
+        width: 10%;
+        margin-bottom: 10px;
     }
 
-    .nav-link {
+    .navbar {
         background-color: palevioletred;
+        width: 100%;
+        position: fixed;
     }
 
-    .nav-link:hover {
+    .botonCarrito {
+        background-color: white;
+        border-radius: 5px;
+        color: palevioletred;
+        text-align: center;
+    }
+
+    .botonCarrito:hover {
+        color: white;
         background-color: #f5a9eb;
         border-style: solid;
         border-width: 5px;
         border-color: white;
         border-radius: 5px;
-    }
-
-    .nav-link:active {
-        background-color: coral;
-        transition: all, 0s;
     }
 }

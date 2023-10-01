@@ -1,134 +1,50 @@
 /** Home Page **/
-/** Aquí empieza el estilo del main **/
-.contenedorMain{
-    width: 100%;
-    background-color: black;
+/** Aquí inicia el estilo del main **/
+.mainIndex {
+    background: url(/images/muro.jpg);
+    background-size: cover;
+    background-position: center;
     display: grid;
-    justify-items: center;
-    grid-template-columns: 1fr;
-    grid-template-areas: "hogwarts" "sombrero" "gryffindor" "ravenclaw" "slytherin" "hufflepuff";
+    grid-template-columns: "contenedorInicio";
+    justify-content: center;
 }
 
-.estiloH{
-    width: 100%;
-    grid-area: hogwarts;
-    background-color: black;
-    border-style: double;
-    border-color: darksalmon;
-    border-width: 5px;
-}
-
-.sombrero{
-    width: 100%;
-    grid-area: sombrero;
+.contenedorInicio {
+    padding: 5%;
+    margin: 5%;
+    grid-area: contenderoInicio;
     background-color: #dab45b;
     border-style: double;
     border-color: saddlebrown;
     border-width: 5px;
 }
 
-.gryffindor{
-    width: 100%;
-    grid-area: gryffindor;
-    background-color: #9c1203;
+.inicio {
+    color: saddlebrown;
+    background-color: burlywood;
     border-style: double;
-    border-color: goldenrod;
+    border-color: darkgoldenrod;
     border-width: 5px;
+    padding: 2%;
 }
 
-.ravenclaw{
-    width: 100%;
-    grid-area: ravenclaw;
-    background-color: #00165e;
-    border-style: double;
-    border-color: coral;
-    border-width: 5px;
+.input {
+    background-color: antiquewhite;
 }
 
-.slytherin{
-    width: 100%;
-    grid-area: slytherin;
-    background-color: 	#033807;
-    border-style: double;
-    border-color: silver;
-    border-width: 5px;
-}
-
-.hufflepuff{
-    width: 100%;
-    grid-area: hufflepuff;
-    background-color: 	#e3a000;
-    border-style: double;
-    border-color: black;
-    border-width: 5px;
-}
-
-.imgIndex{
-    width: 50%;
-    margin: 25%;
-}
-
-.imgIndex:hover{
-    transform: scale(1.3);
-    transition: all,2s ;
-}
-
-.boton1{
-    background-color: #dab45b;
-    text-align: center;
-    margin-bottom: 5%;
-    margin-left: 39.27%;
-}
-
-.boton2{
-    background-color: #9c1203;
-    margin-bottom: 5%;
-    margin-left: 39.27%;
-}
-
-.boton3{
-    background-color: #00165e;
-    margin-bottom: 5%;
-    margin-left: 39.27%;
-}
-
-.boton4{
-    background-color: 	#033807;
-    margin-bottom: 5%;
-    margin-left: 39.27%;
-}
-
-.boton5{
-    background-color: 	#e3a000;
-    margin-bottom: 5%;
-    margin-left: 39.27%;
-}
-
-.boton6{
-    background-color: #dab45b;
-    text-align: center;
-    margin-bottom: 5%;
-    margin-left: 40%;
-}
-
-/** Breakpoint Tablet **/
 @media screen and (min-width: 768px) {
-    .contenedorMain{
-        background-color: black;
-        display: grid;
-        justify-items: center;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "hogwarts sombrero" "gryffindor ravenclaw" "slytherin hufflepuff";
+    .mainIndex {
+        background: url(/images/muro768.jpg);
+        background-size: cover;
+        background-position: center;
     }
 }
 
 /** Breakpoint Desktop **/
 @media screen and (min-width: 1024px) {
-    .contenedorMain{
-        background-color: black;
-        display: grid;
-        justify-items: center;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas: "gryffindor sombrero slytherin" "ravenclaw hogwarts hufflepuff";
+    .mainIndex {
+        background: url(/images/muro1024.jpg);
+        background-size: cover;
+        background-position: center;
     }
 }
