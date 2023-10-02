@@ -7,6 +7,10 @@ const precioTotal = document.getElementById("precioTotal")
 const inputBusqueda = document.getElementById("busqueda")
 let listaCarrito = JSON.parse(localStorage.getItem("carrito")) || [] /**parsear elementos del storage**/
 let botonPagar = document.getElementById("botonPagar")
+let contadorProductos = document.getElementById("contadorProductos")
+let contador = JSON.parse(localStorage.getItem("contador")) /**obtener valores del storage en formato js**/
+localStorage.setItem("contador", JSON.stringify(contador)) /**enviar valores al storage en formato json**/
+console.log(contador)
 
 async function mostrarArticulos(){ /**función mostrar artículos**/
 
@@ -14,6 +18,15 @@ async function mostrarArticulos(){ /**función mostrar artículos**/
     let listaProductosJS = await listaProductosJSON.json()
     const contenedorProductos = document.getElementById("productos")
 
+    function cargarCantidad(){
+        contadorProductos.innerHTML = `
+        ${contador}
+        `
+        console.log(contador)
+        localStorage.setItem("contador", JSON.stringify(contador))
+    }
+
+    cargarCantidad()
 
     const productosCasa = listaProductosJS.filter(producto => producto.casa.includes(perfilString[6].casa))
     productosCasa.forEach(({nombre, precio, id, imgUrl, imgUrl2, imgUrl3}) =>{ /**crear lista de productos**/
@@ -45,6 +58,12 @@ async function mostrarArticulos(){ /**función mostrar artículos**/
                 }
             })
         } else {
+            contador++
+            contadorProductos.innerHTML = `
+            ${contador}
+            `
+            console.log(contador)
+            localStorage.setItem("contador", JSON.stringify(contador))
             Toastify({
                 text: "Producto agregado",
                 duration: 1000,
@@ -76,6 +95,12 @@ async function mostrarArticulos(){ /**función mostrar artículos**/
 
     function eliminarDelCarrito(productoId){
         if(listaCarrito.length!==1){
+            contador--
+            contadorProductos.innerHTML = `
+            ${contador}
+            `
+            console.log(contador)
+            localStorage.setItem("contador", JSON.stringify(contador))
             Toastify({
                 text: "Producto eliminado",
                 duration: 1000,
@@ -89,6 +114,12 @@ async function mostrarArticulos(){ /**función mostrar artículos**/
         listaCarrito.splice(indice,1) /**eliminar valores del array**/
         actualizarCarrito()
         } else{
+            contador = 0
+            contadorProductos.innerHTML = `
+            ${contador}
+            `
+            console.log(contador)
+            localStorage.setItem("contador", JSON.stringify(contador))
             Toastify({
                 text: "Carrito vaciado",
                 duration: 1000,
@@ -106,6 +137,12 @@ async function mostrarArticulos(){ /**función mostrar artículos**/
 
     function pagar(){
         if(listaCarrito.length > 0){
+        contador = 0
+        contadorProductos.innerHTML = `
+        ${contador}
+        `
+        console.log(contador)
+        localStorage.setItem("contador", JSON.stringify(contador))
         Toastify({
             text: "¡Gracias por su compra!",
             duration: 1000,
