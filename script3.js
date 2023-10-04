@@ -8,7 +8,7 @@ const inputBusqueda = document.getElementById("busqueda")
 let listaCarrito = JSON.parse(localStorage.getItem("carrito")) || [] /**parsear elementos del storage**/
 let botonPagar = document.getElementById("botonPagar")
 let contadorProductos = document.getElementById("contadorProductos")
-let contador = JSON.parse(localStorage.getItem("contador")) /**obtener valores del storage en formato js**/
+let contador = JSON.parse(localStorage.getItem("contador")) || 0 /**obtener valores del storage en formato js**/
 localStorage.setItem("contador", JSON.stringify(contador)) /**enviar valores al storage en formato json**/
 console.log(contador)
 
